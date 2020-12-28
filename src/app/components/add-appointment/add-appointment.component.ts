@@ -2,6 +2,8 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 import { Doctor } from './../../models/doctor';
 import { DoctorService } from './../../services/doctor.service';
+import { Patient } from './../../models/patient';
+
 
 
 @Component({
@@ -13,8 +15,10 @@ export class AddAppointmentComponent implements OnInit {
 
   doctors?: Doctor[];
   patientName?: string;
+  patientId?: number;
   description?: string;
   doctorName?: string;
+  doctorId?: number;
   appointmentTime?: Date;
 
   @Output() addAppointment: EventEmitter<any> = new EventEmitter();
@@ -30,14 +34,15 @@ export class AddAppointmentComponent implements OnInit {
 
   onSubmit() {
     const appointment = {
-      patientName: this.patientName,
+      patientId: this.patientId,
       description: this.description,
-      doctorName: this.doctorName,
+      doctorId: this.doctorName,
       appointmentTime: this.appointmentTime
     }
 
     this.addAppointment.emit(appointment);
     console.log('Submitting')
+    console.log(appointment)
   }
 
 }
