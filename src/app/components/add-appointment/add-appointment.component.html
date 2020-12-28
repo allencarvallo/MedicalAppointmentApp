@@ -9,8 +9,7 @@
     <p>Description: <input type="text" name="description" [(ngModel)]="description" placeholder="Description of visit"></p>
 
     <p>Doctor Name: <select type="text" name="doctorName" [(ngModel)]="doctorName" >
-        <option>Jacob</option>
-        <option>Subin</option>
+        <option *ngFor="let doctor of doctors">{{ doctor.doctorName }}</option>
     </select></p>
 
     <p>Appoitnment Date: <input type="date" name="appointmentTime" [(ngModel)]="appointmentTime" placeholder="Appointment Date"></p>
