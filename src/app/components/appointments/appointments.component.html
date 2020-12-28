@@ -1,0 +1,28 @@
+<!-- <div *ngFor="let appointment of appointments">
+    <p>{{ appointment.description }}</p>
+    <p>{{ appointment.id }}</p>
+</div> -->
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Patient</th>
+        <th scope="col">Description</th>
+        <th scope="col">Doctor</th>
+        <th scope="col">Date</th>
+        <th scope="col">Token</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let appointment of appointments">
+        <td>{{ appointment.appointmentId }}</td>
+        <td>{{ appointment.patient.patientName }}</td>
+        <td>{{ appointment.description }}</td>
+        <td>{{ appointment.doctor.doctorName }}</td>
+        <td>{{ appointment.appointmentTime }}</td>
+        <td>{{ appointment.token }}</td>
+      </tr>
+    </tbody>
+  </table>
