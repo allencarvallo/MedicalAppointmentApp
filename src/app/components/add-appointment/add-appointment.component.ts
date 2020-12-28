@@ -12,6 +12,10 @@ import { DoctorService } from './../../services/doctor.service';
 export class AddAppointmentComponent implements OnInit {
 
   doctors?: Doctor[];
+  patientName?: string;
+  description?: string;
+  doctorName?: string;
+  appointmentTime?: Date;
 
   @Output() addAppointment: EventEmitter<any> = new EventEmitter();
 
@@ -20,8 +24,20 @@ export class AddAppointmentComponent implements OnInit {
   ngOnInit(): void {
     this.doctorService.getDoctors().subscribe(doctors => {
       this.doctors = doctors;
-      console.log(this.doctors);
+      //console.log(this.doctors);
     });
+  }
+
+  onSubmit() {
+    const appointment = {
+      patientName: this.patientName,
+      description: this.description,
+      doctorName: this.doctorName,
+      appointmentTime: this.appointmentTime
+    }
+
+    this.addAppointment.emit(appointment);
+    console.log('Submitting')
   }
 
 }
