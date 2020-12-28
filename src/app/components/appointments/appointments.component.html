@@ -21,7 +21,7 @@
         <td>{{ appointment.patient.patientName }}</td>
         <td>{{ appointment.description }}</td>
         <td>{{ appointment.doctor.doctorName }}</td>
-        <td>{{ appointment.appointmentTime }}</td>
+        <td>{{ appointment.appointmentTime | date }}</td>
         <td>{{ appointment.token }}</td>
       </tr>
     </tbody>

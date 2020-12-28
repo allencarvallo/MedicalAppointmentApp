@@ -8,11 +8,17 @@ import { FormsModule } from '@angular/forms';
 import { AppointmentsComponent } from './components/appointments/appointments.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
+import { AddAppointmentComponent } from './components/add-appointment/add-appointment.component';
+import { HeaderComponent } from './components/layout/header/header.component';
+import { AboutComponent } from './components/pages/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppointmentsComponent,
+    AddAppointmentComponent,
+    HeaderComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
