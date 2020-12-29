@@ -4,12 +4,15 @@
 
     <!-- <input type="number" name="appointmentId" [(ngModel)]="appointmentId" placeholder="Id"> -->
 
-    <p>Patient Name: <input type="text" name="patientName" value="patientId" [(ngModel)]="patientName" placeholder="Patient Name"></p>
+    <!-- <p>Patient Name: <input type="text" name="patientName" value="patientId" [(ngModel)]="patientName" placeholder="Patient Name"></p> -->
+    <p>Patient Name: <select name="patientId" [(ngModel)]="patientId" >
+        <option *ngFor="let patient of patients" [value]="patient.patientId">{{ patient.patientName }}</option>
+    </select></p>
 
     <p>Description: <input type="text" name="description" [(ngModel)]="description" placeholder="Description of visit"></p>
 
-    <p>Doctor Name: <select type="text" name="doctorName" value="doctorId" [(ngModel)]="doctorName" >
-        <option *ngFor="let doctor of doctors">{{ doctor.doctorName }}</option>
+    <p>Doctor Name: <select name="doctorId" [(ngModel)]="doctorId" >
+        <option *ngFor="let doctor of doctors" [value]="doctor.doctorId">{{ doctor.doctorName }}</option>
     </select></p>
 
     <p>Appoitnment Date: <input type="date" name="appointmentTime" [(ngModel)]="appointmentTime" placeholder="Appointment Date"></p>
