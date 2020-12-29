@@ -27,6 +27,9 @@ export class AppointmentService {
   // Add Appointment
   addAppointment(appointment: Appointment):Observable<Appointment> {
     console.log('Adding appointment');
+    console.log(appointment);
+    console.log(`${this.appointmentsUrl}${appointment}${httpOptions}`);
     return this.http.post<Appointment>(this.appointmentsUrl, appointment, httpOptions);
   }
+  
 }
