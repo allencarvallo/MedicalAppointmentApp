@@ -6,7 +6,7 @@ export class Appointment {
     patientName?: string = '';
     description?: string = '';
     doctorName?: string = '';
-    appointmentTime?: string = '';
+    appointmentTime?: Date;
     token?: string = '';
     doctor?: Doctor;
     patient?: Patient;
