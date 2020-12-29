@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Doctor } from './../../models/doctor';
 import { DoctorService } from './../../services/doctor.service';
@@ -7,16 +7,12 @@ import { PatientService } from './../../services/patient.service';
 import { AppointmentService } from './../../services/appointment.service';
 import { Appointment } from './../../models/appointment';
 
-
-
 @Component({
   selector: 'app-add-appointment',
   templateUrl: './add-appointment.component.html',
   styleUrls: ['./add-appointment.component.css']
 })
 export class AddAppointmentComponent implements OnInit {
-
-  @Output() addAppointment: EventEmitter<any> = new EventEmitter();
 
   doctors?: Doctor[];
   patients?: Patient[];
@@ -27,11 +23,12 @@ export class AddAppointmentComponent implements OnInit {
   doctorName?: string;
   doctorId?: number;
   appointmentTime?: Date;
+  appointment: any;
 
   constructor(private doctorService: DoctorService, 
               private patientService: PatientService,
-              private appointmentService: AppointmentService
-             ) { }
+              private appointmentService: AppointmentService,
+             ) {}
 
   ngOnInit(): void {
 
@@ -46,18 +43,13 @@ export class AddAppointmentComponent implements OnInit {
   }
 
   onSubmit() {
-    
     const appointment = {
       description: this.description,
       appointmentTime: this.appointmentTime,
       doctorId: this.doctorId,
       patientId: this.patientId
     }
-
-    console.log('calling addAppointment service and passed below params')
-    console.log(appointment)
-    this.addAppointment.emit(appointment);
-
+    this.appointmentService.addAppointment(appointment);
   }
 
 }
