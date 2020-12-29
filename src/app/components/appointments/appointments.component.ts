@@ -23,6 +23,7 @@ export class AppointmentsComponent implements OnInit {
   }
 
   addAppointment(appointment: Appointment) {
+    console.log("Pushing appointment to server");
     this.appointmentService.addAppointment(appointment).subscribe(appointment => {
       this.appointments?.push(appointment);
     });

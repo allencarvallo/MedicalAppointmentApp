@@ -3,6 +3,9 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Doctor } from './../../models/doctor';
 import { DoctorService } from './../../services/doctor.service';
 import { Patient } from './../../models/patient';
+import { PatientService } from './../../services/patient.service';
+import { AppointmentService } from './../../services/appointment.service';
+import { Appointment } from './../../models/appointment';
 
 
 
@@ -13,7 +16,11 @@ import { Patient } from './../../models/patient';
 })
 export class AddAppointmentComponent implements OnInit {
 
+  @Output() addAppointment: EventEmitter<any> = new EventEmitter();
+
   doctors?: Doctor[];
+  patients?: Patient[];
+  appointments?: Appointment[];
   patientName?: string;
   patientId?: number;
   description?: string;
@@ -21,28 +28,36 @@ export class AddAppointmentComponent implements OnInit {
   doctorId?: number;
   appointmentTime?: Date;
 
-  @Output() addAppointment: EventEmitter<any> = new EventEmitter();
-
-  constructor(private doctorService: DoctorService) { }
+  constructor(private doctorService: DoctorService, 
+              private patientService: PatientService,
+              private appointmentService: AppointmentService
+             ) { }
 
   ngOnInit(): void {
+
     this.doctorService.getDoctors().subscribe(doctors => {
       this.doctors = doctors;
       //console.log(this.doctors);
     });
+
+    this.patientService.getPatients().subscribe(patients => {
+      this.patients = patients;
+    })
   }
 
   onSubmit() {
+    
     const appointment = {
-      patientId: this.patientId,
       description: this.description,
-      doctorId: this.doctorName,
-      appointmentTime: this.appointmentTime
+      appointmentTime: this.appointmentTime,
+      doctorId: this.doctorId,
+      patientId: this.patientId
     }
 
-    this.addAppointment.emit(appointment);
-    console.log('Submitting')
+    console.log('calling addAppointment service and passed below params')
     console.log(appointment)
+    this.addAppointment.emit(appointment);
+
   }
 
 }
