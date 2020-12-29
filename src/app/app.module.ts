@@ -11,7 +11,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { AddAppointmentComponent } from './components/add-appointment/add-appointment.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { AboutComponent } from './components/pages/about/about.component';
-import { AppointmentItemComponent } from './components/appointment-item/appointment-item.component';
+// import { AppointmentItemComponent } from './components/appointment-item/appointment-item.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +19,8 @@ import { AppointmentItemComponent } from './components/appointment-item/appointm
     AppointmentsComponent,
     AddAppointmentComponent,
     HeaderComponent,
-    AboutComponent,
-    AppointmentItemComponent,
+    AboutComponent
+    // AppointmentItemComponent,
   ],
   imports: [
     BrowserModule,
