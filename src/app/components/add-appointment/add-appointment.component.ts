@@ -39,7 +39,9 @@ export class AddAppointmentComponent implements OnInit {
 
     this.patientService.getPatients().subscribe(patients => {
       this.patients = patients;
-    })
+    });
+
+
   }
 
   onSubmit() {
@@ -49,7 +51,7 @@ export class AddAppointmentComponent implements OnInit {
       doctorId: this.doctorId,
       patientId: this.patientId
     }
-    this.appointmentService.addAppointment(appointment);
+    this.appointmentService.addAppointment(appointment).subscribe();
   }
 
 }
