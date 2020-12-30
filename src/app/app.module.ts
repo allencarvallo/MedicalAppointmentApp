@@ -8,10 +8,12 @@ import { FormsModule } from '@angular/forms';
 import { AppointmentsComponent } from './components/appointments/appointments.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatInputModule } from '@angular/material/input'; 
 import { AddAppointmentComponent } from './components/add-appointment/add-appointment.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { AboutComponent } from './components/pages/about/about.component';
-// import { AppointmentItemComponent } from './components/appointment-item/appointment-item.component';
+import { PatientLoginComponent } from './components/patient-login/patient-login.component';
+import { PatientSignupComponent } from './components/patient-signup/patient-signup.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,9 @@ import { AboutComponent } from './components/pages/about/about.component';
     AppointmentsComponent,
     AddAppointmentComponent,
     HeaderComponent,
-    AboutComponent
-    // AppointmentItemComponent,
+    AboutComponent,
+    PatientLoginComponent,
+    PatientSignupComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +32,7 @@ import { AboutComponent } from './components/pages/about/about.component';
     FormsModule,
     BrowserAnimationsModule,
     MatSliderModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

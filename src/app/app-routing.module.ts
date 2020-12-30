@@ -4,6 +4,8 @@ import { AddAppointmentComponent } from './components/add-appointment/add-appoin
 
 import { AppointmentsComponent } from './components/appointments/appointments.component';
 import { AboutComponent } from './components/pages/about/about.component';
+import { PatientLoginComponent } from './components/patient-login/patient-login.component';
+import { PatientSignupComponent } from './components/patient-signup/patient-signup.component';
 
 const routes: Routes = [
   {
@@ -14,6 +16,12 @@ const routes: Routes = [
   },
   {
     path: 'add', component: AddAppointmentComponent
+  },
+  {
+    path: 'patient-login', component: PatientLoginComponent
+  },
+  {
+    path: 'patient-signup', component: PatientSignupComponent
   }
 ];
 
