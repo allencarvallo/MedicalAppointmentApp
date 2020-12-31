@@ -15,7 +15,7 @@ const httpOptions = {
 })
 export class DoctorService {
 
-  doctorsUrl: string = "http://localhost:55854/api/Doctors";
+  doctorsUrl: string = "http://localhost:55854/MedicalAppointment/Doctors";
 
   constructor(private http: HttpClient) { }
 

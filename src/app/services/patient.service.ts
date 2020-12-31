@@ -15,7 +15,8 @@ const httpOptions = {
 })
 export class PatientService {
 
-  patientsUrl: string = "http://localhost:55854/api/Patients";
+  patientsUrl: string = "http://localhost:55854/MedicalAppointment/Patients";
+  patientLoginUrl: string = "http://localhost:55854/MedicalAppointment/Patients/Login";
 
   constructor(private http: HttpClient) { }
 
@@ -25,11 +26,11 @@ export class PatientService {
   }
 
   // Patient Login
-  // patientLogin(patient: Patient): Observable<Patient> {
-  //   console.log('Patient Login');
-  //   console.log(patient);
-  //   return this.http.post<Patient>(this.patientsUrl, patient, httpOptions);
-  // }
+  patientLogin(patient: Patient): Observable<Patient> {
+    console.log('Patient Login');
+    console.log(patient);
+    return this.http.post<Patient>(this.patientLoginUrl, patient, httpOptions);
+  }
 
   // Patient Signup
   patientSignup(patient: Patient): Observable<Patient> {
