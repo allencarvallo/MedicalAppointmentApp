@@ -39,7 +39,7 @@ export class PatientLoginComponent implements OnInit {
         console.error('error caught in component')
         this.errorMessage = error;
         this.loading = false;
-        alert(`Invalid Credentials!! \nUser with email: ${patientLoginData.patientEmail} and password: ${patientLoginData.patientPassword} does not exist`);
+        alert(`Invalid Credentials!! \nUser with email: ${patientLoginData.patientEmail} and password entered does not exist`);
         }
       );
 
