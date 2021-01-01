@@ -1,4 +1,4 @@
-<h2 style="background-color:burlywood; padding: 5px 10px 10px 15px;">Make your Appointment here!!!</h2>
+<!-- <h2 style="background-color:burlywood; padding: 5px 10px 10px 15px;">Make your Appointment here!!!</h2>
 
 <form class="form" (ngSubmit)="onSubmit()">
 
@@ -17,4 +17,35 @@
     <p><input type="submit" value="Submit" class="btn"></p>
 
 </form>
+ -->
 
+<form class="form" (ngSubmit)="onSubmit()">
+
+    <div class="container">
+        
+        <h1>Appointment</h1>
+        <p>Please fill the form details and submit</p>
+        <hr>
+
+        <label for="patientName"><b>Patient Name</b></label>
+        <select name="patientId" [(ngModel)]="patientId" >
+            <option *ngFor="let patient of patients" [value]="patient.patientId" >{{ patient.patientName }}</option>
+        </select>
+        <!-- <input type="text" name="patientName" [(ngModel)]="patientName" placeholder="Enter Patient Name" required> -->
+
+        <label for="description"><b>Description</b></label>
+        <input type="text" name="description" [(ngModel)]="description" placeholder="Enter Description of visit" required>
+
+        <label for="doctor"><b>Doctor Name</b></label>
+        <select name="doctorId" [(ngModel)]="doctorId" >
+            <option *ngFor="let doctor of doctors" [value]="doctor.doctorId" >{{ doctor.doctorName }}</option>
+        </select>
+
+        <label for="date"><b>Date</b></label>
+        <input type="date" name="appointmentTime" [(ngModel)]="appointmentTime" required>
+
+        <button type="submit">Submit</button>
+
+    </div>
+
+</form>

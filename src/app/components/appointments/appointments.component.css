@@ -1,0 +1,10 @@
+.trows {
+    background-color: lightgoldenrodyellow;
+}
+
+.table {
+    border-style: inset;
+    border-color: black;
+    border-radius: 20px;
+    margin-top: 5px;
+}

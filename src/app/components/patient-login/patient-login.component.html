@@ -1,5 +1,4 @@
-<h2 class="heading">Patient Login</h2>
-
+<!-- 
 <form class="form" (ngSubmit)="onSubmit()">
 
     <p>Email :  <input type="email" name="patientEmail" [(ngModel)]="patientEmail" placeholder="your email"></p>
@@ -8,4 +7,25 @@
 
     <p><input type="submit" value="Submit" class="btn"></p>
 
+</form> -->
+
+<form class="form" (ngSubmit)="onSubmit()">
+
+    <div class="container">
+        
+        <h1>Login</h1>
+        <p>Please enter your login credentials</p>
+        <hr>
+
+        <label for="email"><b>Email</b></label>
+        <input type="email" name="patientEmail" [(ngModel)]="patientEmail" placeholder="Enter Email" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" name="patientPassword" [(ngModel)]="patientPassword" placeholder="Enter Password" required>
+
+        <button type="submit">Login</button>
+
+    </div>
+
 </form>
+    

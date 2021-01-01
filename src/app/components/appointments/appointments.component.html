@@ -1,12 +1,13 @@
 <table class="table">
   <thead>
-    <tr>
+    <tr class="trows">
       <th scope="col">Id</th>
       <th scope="col">Patient</th>
       <th scope="col">Description</th>
       <th scope="col">Doctor</th>
       <th scope="col">Date</th>
       <th scope="col">Token</th>
+      <th scope="col">Modify/Delete</th>
     </tr>
   </thead>
 
@@ -18,6 +19,11 @@
       <td>{{ appointment?.doctor?.doctorName }}</td>
       <td>{{ appointment?.appointmentTime | date }}</td>
       <td>{{ appointment?.token }}</td>
+      <td>
+        <button>Edit</button>
+        <button>Delete</button>
+      </td>
+
     </tr>
   </tbody>
 </table>

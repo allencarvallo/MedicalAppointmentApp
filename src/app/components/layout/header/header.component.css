@@ -9,3 +9,8 @@
     color: #fff;
     text-decoration: none;
 }
+
+h1 {
+    font-family: 'Rancho', cursive;
+    font-size: 250%;
+}
