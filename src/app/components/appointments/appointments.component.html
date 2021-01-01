@@ -20,8 +20,8 @@
       <td>{{ appointment?.appointmentTime | date }}</td>
       <td>{{ appointment?.token }}</td>
       <td>
-        <button>Edit</button>
-        <button>Delete</button>
+        <button (click)="appointmentEdit(appointment)">Edit</button>
+        <button (click)="appointmentDelete(appointment)">Delete</button>
       </td>
 
     </tr>

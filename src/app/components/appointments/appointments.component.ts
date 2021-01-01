@@ -12,6 +12,7 @@ import { Appointment }  from '../../models/appointment';
 export class AppointmentsComponent implements OnInit {
 
   appointments?: Appointment[];
+  // appointment?: Appointment;
 
   constructor(private appointmentService: AppointmentService) {}
 
@@ -20,6 +21,14 @@ export class AppointmentsComponent implements OnInit {
       this.appointments = appointments;
       console.log(this.appointments);
     });
+  }
+
+  appointmentEdit(appointment: Appointment){
+    alert(`Edit appointment with id: ${appointment.appointmentId}`)
+  }
+
+  appointmentDelete(appointment: Appointment) {
+    alert(`Delete appointment with id: ${appointment.appointmentId}`)
   }
 
 }
