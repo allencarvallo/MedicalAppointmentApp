@@ -11,7 +11,6 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule } from '@angular/material/input'; 
 import { AddAppointmentComponent } from './components/add-appointment/add-appointment.component';
 import { HeaderComponent } from './components/layout/header/header.component';
-import { AboutComponent } from './components/pages/about/about.component';
 import { PatientLoginComponent } from './components/patient-login/patient-login.component';
 import { PatientSignupComponent } from './components/patient-signup/patient-signup.component';
 
@@ -21,7 +20,6 @@ import { PatientSignupComponent } from './components/patient-signup/patient-sign
     AppointmentsComponent,
     AddAppointmentComponent,
     HeaderComponent,
-    AboutComponent,
     PatientLoginComponent,
     PatientSignupComponent
   ],
