@@ -28,7 +28,7 @@
         <hr>
 
         <label for="patientName"><b>Patient Name</b></label>
-        <select name="patientId" [(ngModel)]="patientId" >
+        <select name="patientId" [(ngModel)]="patientId" [disabled] = "true" >
             <option *ngFor="let patient of patients" [value]="patient.patientId" >{{ patient.patientName }}</option>
         </select>
         <!-- <input type="text" name="patientName" [(ngModel)]="patientName" placeholder="Enter Patient Name" required> -->
