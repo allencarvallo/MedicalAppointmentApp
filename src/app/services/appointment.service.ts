@@ -17,11 +17,17 @@ export class AppointmentService {
 
   appointmentsUrl: string = 'http://localhost:55854/MedicalAppointment/Appointments';
 
+
   constructor(private http: HttpClient) { }
 
-  // Get Appointments
-  getAppointments(): Observable<Appointment[]> {
-    return this.http.get<Appointment[]>(`${this.appointmentsUrl}`);
+  // Get Appointments by patient id
+  getAppointmentsByPatientId(patientId: number): Observable<Appointment[]> {
+    return this.http.get<Appointment[]>(`${this.appointmentsUrl}/patient/${patientId}`);
+  }
+
+  // GEt Appointments by id 
+  getAppointmentById(id: number): Observable<Appointment> {
+    return this.http.get<Appointment>(`${this.appointmentsUrl}/${id}`);
   }
 
   // Add Appointment
@@ -30,6 +36,18 @@ export class AppointmentService {
     console.log(appointment);
     console.log(`${this.appointmentsUrl}${appointment}${httpOptions}`);
     return this.http.post<Appointment>(this.appointmentsUrl, appointment, httpOptions);
+  }
+
+  // Edit Appointment
+  updateAppointment(appointment: Appointment): Observable<Appointment> {
+    const id = appointment.appointmentId;
+    return this.http.put<Appointment>(`${this.appointmentsUrl}/${id}`,appointment, httpOptions);
+  }
+
+  // Delete Appointment
+  deleteAppointment(appointment: Appointment) {
+    const id = appointment.appointmentId;
+    return this.http.delete(`${this.appointmentsUrl}/${id}`, httpOptions);
   }
   
 }
