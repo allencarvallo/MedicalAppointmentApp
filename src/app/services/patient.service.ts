@@ -15,6 +15,7 @@ const httpOptions = {
 })
 export class PatientService {
 
+  patientId?: number = 0;
   patientsUrl: string = "http://localhost:55854/MedicalAppointment/Patients";
   patientLoginUrl: string = "http://localhost:55854/MedicalAppointment/Patients/Login";
 
@@ -28,7 +29,7 @@ export class PatientService {
   // Patient Login
   patientLogin(patient: Patient): Observable<Patient> {
     console.log('Patient Login');
-    console.log(patient);
+    //console.log(patient);
     return this.http.post<Patient>(this.patientLoginUrl, patient, httpOptions);
   }
 
