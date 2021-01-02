@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { PatientService } from './../../services/patient.service';
 
@@ -12,7 +13,8 @@ export class PatientSignupComponent implements OnInit {
   patientEmail?: string;
   patientPassword?: string; 
 
-  constructor(private patientService: PatientService) { }
+  constructor(private patientService: PatientService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -23,7 +25,10 @@ export class PatientSignupComponent implements OnInit {
       patientEmail: this.patientEmail,
       patientPassword: this.patientPassword
     }
-    this.patientService.patientSignup(patientSignupData).subscribe();
+    this.patientService.patientSignup(patientSignupData).subscribe(() => {
+      this.router.navigate(["patient-login"])
+    }
+    );
   }
 
 }

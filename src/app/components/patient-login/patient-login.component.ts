@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { PatientService } from './../../services/patient.service';
 import { Component, OnInit } from '@angular/core';
 import { Patient } from './../../models/patient';
@@ -9,13 +10,14 @@ import { Patient } from './../../models/patient';
 })
 export class PatientLoginComponent implements OnInit {
 
-  patientId?: any;
+
   patientEmail?: string;
   patientPassword?: string; 
 
   loading: boolean = true;
   errorMessage: string = "";
-  constructor(private patientService: PatientService) { }
+  constructor(private patientService: PatientService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -30,10 +32,11 @@ export class PatientLoginComponent implements OnInit {
     this.patientService.patientLogin(patientLoginData)
     .subscribe
       (p => {
-        this.patientId = p.patientId;
-        console.log(this.patientId);
+        console.log(p.patientId);
         // To set patient Id in local storage
-        localStorage.setItem('patientId', this.patientId)
+        localStorage.setItem('patientId', ''+p.patientId);
+        this.patientService.patientId = p.patientId;
+        this.router.navigate(["appointments"]);
         },
       error => {                              
         console.error('error caught in component')
