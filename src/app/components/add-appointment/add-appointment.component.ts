@@ -77,7 +77,8 @@ export class AddAppointmentComponent implements OnInit {
       );
     }
     else {
-      this.appointmentService.addAppointment(appointment).subscribe();
+      this.appointmentService.addAppointment(appointment).subscribe(() =>
+      this.router.navigate(["appointments"]));
     }
   }
 
