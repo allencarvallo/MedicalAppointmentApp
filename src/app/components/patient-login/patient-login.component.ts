@@ -14,8 +14,6 @@ export class PatientLoginComponent implements OnInit {
   patientEmail?: string;
   patientPassword?: string; 
 
-  loading: boolean = true;
-  errorMessage: string = "";
   constructor(private patientService: PatientService,
               private router: Router) { }
 
@@ -40,8 +38,6 @@ export class PatientLoginComponent implements OnInit {
         },
       error => {                              
         console.error('error caught in component')
-        this.errorMessage = error;
-        this.loading = false;
         alert(`Invalid Credentials!! \nUser with email: ${patientLoginData.patientEmail} and password entered does not exist`);
         }
       );

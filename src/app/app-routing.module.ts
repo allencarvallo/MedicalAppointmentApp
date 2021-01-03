@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './auth.guard';
-import { AddAppointmentComponent } from './components/add-appointment/add-appointment.component';
 
+import { AddAppointmentComponent } from './components/add-appointment/add-appointment.component';
 import { AppointmentsComponent } from './components/appointments/appointments.component';
 import { PatientLoginComponent } from './components/patient-login/patient-login.component';
 import { PatientSignupComponent } from './components/patient-signup/patient-signup.component';
