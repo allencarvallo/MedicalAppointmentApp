@@ -1,4 +1,6 @@
+import { PatientService } from './../../../services/patient.service';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-header',
@@ -7,10 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public patientService: PatientService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   onLogout() {
     localStorage.clear();
