@@ -38,6 +38,7 @@ export class AppointmentsComponent implements OnInit {
     this.appointmentService.deleteAppointment(appointment)
       .subscribe(() => {
         this.appointments?.splice(this.appointments.indexOf(appointment), 1);
+        this.router.navigate(["appointments"]);
       });
   }
 
