@@ -1,10 +1,10 @@
 <header class="header">
     <h1>Medical Appointment Portal</h1>
     <nav>
-        <a routerLink="/">Home</a> | 
-        <a routerLink="/add-appointment">Make Appointment</a> |
-        <a routerLink="/patient-login">Login</a> |
-        <a routerLink="/patient-signup">SignUp</a> |
-        <a href="#" (click)="onLogout()">LogOut</a>
+        <a routerLink="/appointments" routerLinkActive="active">Home | </a> 
+        <a routerLink="/add-appointment" routerLinkActive="active">Make Appointment | </a> 
+        <a routerLink="/patient-signup" routerLinkActive="active">SignUp | </a> 
+        <a routerLink="/patient-login" routerLinkActive="active" *ngIf="!patientService.patientId">Login | </a> 
+        <a href="#" (click)="onLogout()" routerLinkActive="active" *ngIf="patientService.patientId">LogOut</a>
     </nav>
 </header>
