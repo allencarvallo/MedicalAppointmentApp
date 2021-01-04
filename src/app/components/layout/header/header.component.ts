@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
 
   onLogout() {
     localStorage.clear();
+    this.patientService.patientId = 0;
   }
 
 }
