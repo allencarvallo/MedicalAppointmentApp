@@ -13,6 +13,7 @@ import { AddAppointmentComponent } from './components/add-appointment/add-appoin
 import { HeaderComponent } from './components/layout/header/header.component';
 import { PatientLoginComponent } from './components/patient-login/patient-login.component';
 import { PatientSignupComponent } from './components/patient-signup/patient-signup.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PatientSignupComponent } from './components/patient-signup/patient-sign
     FormsModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,9 @@
-<p><span>Appointments </span><button (click)="addAppointment()">Add</button></p>
+<p>
+  <label for="add appointment"><strong>Add Appointment</strong></label>
+  <button id="add appointment" (click)="addAppointment()">
+    <mat-icon>add</mat-icon>
+  </button>
+</p>
 
 
 <table class="table">
@@ -23,8 +28,12 @@
       <td>{{ appointment?.appointmentTime | date }}</td>
       <td>{{ appointment?.token }}</td>
       <td>
-        <button (click)="appointmentEdit(appointment)">Edit</button>
-        <button (click)="appointmentDelete(appointment)">Delete</button>
+        <button (click)="appointmentEdit(appointment)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button (click)="appointmentDelete(appointment)">
+          <mat-icon>delete</mat-icon>
+        </button>
       </td>
 
     </tr>
