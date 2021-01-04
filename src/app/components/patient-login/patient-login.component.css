@@ -22,6 +22,7 @@ form {
     border: none;
     cursor: pointer;
     width: 20%;
+    border-radius: 20px;
   }
   
   /* Add a hover effect for buttons */

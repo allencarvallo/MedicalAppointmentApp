@@ -1,5 +1,5 @@
 .trows {
-    background-color: lightgoldenrodyellow;
+    background-color: goldenrod;
 }
 
 .table {
@@ -7,4 +7,13 @@
     border-color: black;
     border-radius: 20px;
     margin-top: 5px;
+}
+
+button {
+    border-radius: 20px;
+    margin-left: 2px;
+}
+
+button:hover {
+    background-color: gold;
 }
