@@ -20,6 +20,7 @@ export class AuthGuard implements CanActivate {
     }
     else {
       this.router.navigate(["patient-login"]);
+      this.patientService.patientId= 0;
       return false;
     }
 
